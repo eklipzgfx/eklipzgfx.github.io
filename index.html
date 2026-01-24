@@ -5,44 +5,65 @@
   <title>eklipz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Full screen image background */
     body {
-      background: #0b0b0b;
-      color: white;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      gap: 18px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: white;
+      text-align: center;
+      background: url('https://i.imgur.com/kpWNkgS.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dark overlay to make buttons readable */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); /* adjust darkness */
+      z-index: 0;
     }
 
     h1 {
-      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 20px;
       font-weight: 600;
       letter-spacing: 0.5px;
+      font-size: 2.2rem;
     }
 
     a {
       text-decoration: none;
       width: 260px;
+      position: relative;
+      z-index: 1;
     }
 
     button {
       width: 100%;
-      background: #151515;
+      background: rgba(30,30,30,0.8);
       color: white;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #555;
       padding: 16px;
       font-size: 17px;
       border-radius: 12px;
       cursor: pointer;
-      transition: 0.15s ease;
+      transition: 0.2s ease;
     }
 
     button:hover {
-      background: #222;
-      transform: translateY(-1px);
+      background: rgba(50,50,50,0.9);
+      transform: translateY(-2px);
     }
   </style>
 </head>
