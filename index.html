@@ -22,7 +22,6 @@
         .portfolio { padding: 60px 10% 100px 10%; text-align: center; }
         .portfolio h2 { margin-bottom: 50px; font-size: 36px; }
 
-        /* Grid layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -35,14 +34,11 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             cursor: pointer;
             object-fit: cover;
-            height: 250px; /* fixed height for uniformity */
+            height: 250px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
-        /* Make some images pop more */
-        .grid img:nth-child(odd) {
-            height: 300px;
-        }
+        .grid img:nth-child(odd) { height: 300px; }
 
         .grid img:hover {
             transform: scale(1.08) rotate(-1deg);
@@ -95,9 +91,9 @@
 <section class="hero">
     <h1>Design by Eklipz</h1>
     <p>
-        I’m Eklipz, a digital graphic designer focused on clean, bold, and modern visuals. 
-        I create banners, profile graphics, branding concepts, and custom designs that stand out 
-        and elevate online presence. Every project is built with attention to detail and a strong visual identity.
+        I’m eklipz, a graphic designer creating clean, bold, and modern visuals. 
+        I can create banners, profile graphics, esports graphics, social media content and custom designs that stand out. 
+      Every project is built with attention to detail and a strong visual identity.
     </p>
 </section>
 
@@ -110,6 +106,8 @@
         <img src="https://i.ibb.co/nML8WQB1/Profile-Banner.png" alt="Profile Banner" onclick="openLightbox(2)">
         <img src="https://i.ibb.co/0VQdph0F/Racing-League-Banner.png" alt="Racing League Banner Alternate" onclick="openLightbox(3)">
         <img src="https://i.ibb.co/4ZpMJcHz/Profile-pictures.png" alt="Profile Pictures" onclick="openLightbox(4)">
+        <img src="https://i.ibb.co/wXHNDvf/League-standings-graphic.png" alt="League Standings Graphic" onclick="openLightbox(5)">
+        <img src="https://i.ibb.co/5hrDYSXH/Profile-pictures-alternate-style.png" alt="Profile Pictures Alternate Style" onclick="openLightbox(6)">
     </div>
 </section>
 
@@ -135,7 +133,9 @@
         { src: "https://i.ibb.co/jPJPyXTG/Racing-League-Banner.png", alt: "Racing League Banner" },
         { src: "https://i.ibb.co/nML8WQB1/Profile-Banner.png", alt: "Profile Banner" },
         { src: "https://i.ibb.co/0VQdph0F/Racing-League-Banner.png", alt: "Racing League Banner Alternate" },
-        { src: "https://i.ibb.co/4ZpMJcHz/Profile-pictures.png", alt: "Profile Pictures" }
+        { src: "https://i.ibb.co/4ZpMJcHz/Profile-pictures.png", alt: "Profile Pictures" },
+        { src: "https://i.ibb.co/wXHNDvf/League-standings-graphic.png", alt: "League Standings Graphic" },
+        { src: "https://i.ibb.co/5hrDYSXH/Profile-pictures-alternate-style.png", alt: "Profile Pictures Alternate Style" }
     ];
 
     let currentIndex = 0;
