@@ -8,76 +8,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background: #0f0f0f;
             color: white;
         }
 
-        .hero {
-            padding: 120px 10% 60px 10%;
-            text-align: center;
-        }
+        .hero { padding: 120px 10% 60px 10%; text-align: center; }
+        .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 20px; }
+        .hero p { max-width: 700px; margin: 0 auto; font-size: 18px; opacity: 0.7; line-height: 1.6; }
 
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
+        .portfolio { padding: 60px 10% 100px 10%; text-align: center; }
+        .portfolio h2 { margin-bottom: 50px; font-size: 36px; }
 
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
-            opacity: 0.7;
-            line-height: 1.6;
-        }
-
-        .portfolio {
-            padding: 60px 10% 100px 10%;
-            text-align: center;
-        }
-
-        .portfolio h2 {
-            margin-bottom: 50px;
-        }
-
+        /* Grid layout */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
         .grid img {
             width: 100%;
             border-radius: 14px;
-            transition: 0.4s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             cursor: pointer;
+            object-fit: cover;
+            height: 250px; /* fixed height for uniformity */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Make some images pop more */
+        .grid img:nth-child(odd) {
+            height: 300px;
         }
 
         .grid img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(-1deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+            z-index: 2;
         }
 
-        .contact {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .contact img {
-            width: 100px;
-            transition: 0.3s ease;
-        }
-
-        .contact img:hover {
-            transform: scale(1.1);
-        }
+        .contact { padding: 100px 0; text-align: center; }
+        .contact img { width: 100px; transition: 0.3s ease; }
+        .contact img:hover { transform: scale(1.1); }
 
         /* Lightbox */
         .lightbox {
@@ -85,10 +60,8 @@
             position: fixed;
             z-index: 999;
             padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
             background: rgba(0,0,0,0.95);
             text-align: center;
         }
@@ -100,20 +73,9 @@
             max-height: 70vh;
         }
 
-        .caption {
-            color: #ccc;
-            margin-top: 15px;
-            font-size: 18px;
-        }
+        .caption { color: #ccc; margin-top: 15px; font-size: 18px; }
 
-        .close {
-            position: absolute;
-            top: 25px;
-            right: 40px;
-            font-size: 40px;
-            cursor: pointer;
-        }
-
+        .close { position: absolute; top: 25px; right: 40px; font-size: 40px; cursor: pointer; }
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -123,13 +85,9 @@
             padding: 16px;
             user-select: none;
         }
-
         .prev { left: 30px; }
         .next { right: 30px; }
-
-        .prev:hover, .next:hover, .close:hover {
-            opacity: 0.7;
-        }
+        .prev:hover, .next:hover, .close:hover { opacity: 0.7; }
     </style>
 </head>
 <body>
@@ -139,7 +97,7 @@
     <p>
         I’m Eklipz, a digital graphic designer focused on clean, bold, and modern visuals. 
         I create banners, profile graphics, branding concepts, and custom designs that stand out 
-        and elevate online presence.
+        and elevate online presence. Every project is built with attention to detail and a strong visual identity.
     </p>
 </section>
 
@@ -147,12 +105,11 @@
     <h2>Featured Work</h2>
 
     <div class="grid">
-        <img src="https://i.ibb.co/tpJPdYz2/Profile-Banner.png" alt="Racing League Banner" onclick="openLightbox(0)">
-        <img src="https://i.ibb.co/qL0cRNND/rexy-bannner.png" alt="Profile Banner" onclick="openLightbox(1)">
-        <img src="https://i.ibb.co/4ZpMJcHz/Profile-pictures.png" alt="Profile Pictures" onclick="openLightbox(2)">
-        <img src="https://i.ibb.co/WvWyRNQP/aurex-sign-example.png" alt="Esport Design" onclick="openLightbox(3)">
-        <img src="https://i.ibb.co/pB8mMYGh/Race-winner-design.png" alt="Race winner design" onclick="openLightbox(4)">
-        <img src="https://i.ibb.co/jPJPyXTG/Racing-League-Banner.png" alt="Race winner design" onclick="openLightbox(4)">
+        <img src="https://i.ibb.co/HfsJb51h/Race-winner-design.png" alt="Race Winner Design" onclick="openLightbox(0)">
+        <img src="https://i.ibb.co/jPJPyXTG/Racing-League-Banner.png" alt="Racing League Banner" onclick="openLightbox(1)">
+        <img src="https://i.ibb.co/nML8WQB1/Profile-Banner.png" alt="Profile Banner" onclick="openLightbox(2)">
+        <img src="https://i.ibb.co/0VQdph0F/Racing-League-Banner.png" alt="Racing League Banner Alternate" onclick="openLightbox(3)">
+        <img src="https://i.ibb.co/4ZpMJcHz/Profile-pictures.png" alt="Profile Pictures" onclick="openLightbox(4)">
     </div>
 </section>
 
@@ -174,10 +131,11 @@
 
 <script>
     const images = [
-        { src: "https://i.ibb.co/DD9r252X/imols-banner.png", alt: "Imols Banner" },
-        { src: "https://i.ibb.co/qL0cRNND/rexy-bannner.png", alt: "Rexy Banner" },
-        { src: "https://i.ibb.co/m56nZYm6/eklipz-pfp.png", alt: "Eklipz PFP" },
-        { src: "https://i.ibb.co/WvWyRNQP/aurex-sign-example.png", alt: "Aurex Sign Example" }
+        { src: "https://i.ibb.co/HfsJb51h/Race-winner-design.png", alt: "Race Winner Design" },
+        { src: "https://i.ibb.co/jPJPyXTG/Racing-League-Banner.png", alt: "Racing League Banner" },
+        { src: "https://i.ibb.co/nML8WQB1/Profile-Banner.png", alt: "Profile Banner" },
+        { src: "https://i.ibb.co/0VQdph0F/Racing-League-Banner.png", alt: "Racing League Banner Alternate" },
+        { src: "https://i.ibb.co/4ZpMJcHz/Profile-pictures.png", alt: "Profile Pictures" }
     ];
 
     let currentIndex = 0;
@@ -189,16 +147,12 @@
         document.getElementById("lightbox-caption").textContent = images[currentIndex].alt;
     }
 
-    function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
-    }
+    function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
 
     function changeSlide(direction) {
         currentIndex += direction;
-
         if (currentIndex < 0) currentIndex = images.length - 1;
         if (currentIndex >= images.length) currentIndex = 0;
-
         document.getElementById("lightbox-img").src = images[currentIndex].src;
         document.getElementById("lightbox-caption").textContent = images[currentIndex].alt;
     }
