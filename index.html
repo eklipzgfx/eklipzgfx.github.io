@@ -1,100 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>eklipz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Body and background */
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: white;
-      text-align: center;
-      background: url('https://raw.githubusercontent.com/eklipzexe/eklipzexe.github.io/refs/heads/main/image.png') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-      overflow: hidden;
-      gap: 5px; /* spacing between elements */
-    }
+    <meta charset="UTF-8">
+    <title>Design by Eklipz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* Dark overlay */
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    /* Site title */
-    h1 {
-      position: relative;
-      z-index: 1;
-      margin-bottom: 10px;
-      font-size: 4rem; /* bigger text */
-      font-weight: 600;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Links/buttons container */
-    a {
-      text-decoration: none;
-      width: 260px;
-      position: relative;
-      z-index: 1;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f0f;
+            color: white;
+        }
 
-    /* Buttons */
-    button {
-      width: 100%;
-      background: rgba(30, 30, 30, 0.85);
-      color: white;
-      border: 1px solid #555;
-      padding: 16px;
-      font-size: 17px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
+        .hero {
+            padding: 120px 10% 60px 10%;
+            text-align: center;
+        }
 
-    button:hover {
-      background: rgba(50, 50, 50, 0.9);
-      transform: translateY(-2px);
-    }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
 
-    /* Responsive adjustments for mobile */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 3rem;
-      }
-      button {
-        font-size: 16px;
-        padding: 14px;
-      }
-      a {
-        width: 200px;
-      }
-    }
-  </style>
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .portfolio {
+            padding: 60px 10% 100px 10%;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .grid img {
+            width: 100%;
+            border-radius: 14px;
+            transition: 0.4s ease;
+            cursor: pointer;
+        }
+
+        .grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact img {
+            width: 100px;
+            transition: 0.3s ease;
+        }
+
+        .contact img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            text-align: center;
+        }
+
+        .lightbox img {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 70vh;
+        }
+
+        .caption {
+            color: #ccc;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            padding: 16px;
+            user-select: none;
+        }
+
+        .prev { left: 30px; }
+        .next { right: 30px; }
+
+        .prev:hover, .next:hover, .close:hover {
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>eklipz</h1>
+<section class="hero">
+    <h1>Design by Eklipz</h1>
+    <p>
+        I’m Eklipz, a digital graphic designer focused on clean, bold, and modern visuals. 
+        I create banners, profile graphics, branding concepts, and custom designs that stand out 
+        and elevate online presence.
+    </p>
+</section>
 
-  <a href="https://guns.lol/eklipz" target="_blank">
-    <button>guns</button>
-  </a>
+<section class="portfolio">
+    <h2>Featured Work</h2>
 
-  <a href="https://uk.pcpartpicker.com/user/eklipz.exe/saved/pTyyqs" target="_blank">
-    <button>pc specs</button>
-  </a>
+    <div class="grid">
+        <img src="https://i.ibb.co/DD9r252X/imols-banner.png" alt="Imols Banner" onclick="openLightbox(0)">
+        <img src="https://i.ibb.co/qL0cRNND/rexy-bannner.png" alt="Rexy Banner" onclick="openLightbox(1)">
+        <img src="https://i.ibb.co/m56nZYm6/eklipz-pfp.png" alt="Eklipz PFP" onclick="openLightbox(2)">
+        <img src="https://i.ibb.co/WvWyRNQP/aurex-sign-example.png" alt="Aurex Sign Example" onclick="openLightbox(3)">
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact</h2>
+    <a href="https://discord.com/users/1218968797889957941" target="_blank">
+        <img src="https://pngimg.com/d/discord_PNG3.png" alt="Discord">
+    </a>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+    <img id="lightbox-img">
+    <div class="caption" id="lightbox-caption"></div>
+    <span class="next" onclick="changeSlide(1)">&#10095;</span>
+</div>
+
+<script>
+    const images = [
+        { src: "https://i.ibb.co/DD9r252X/imols-banner.png", alt: "Imols Banner" },
+        { src: "https://i.ibb.co/qL0cRNND/rexy-bannner.png", alt: "Rexy Banner" },
+        { src: "https://i.ibb.co/m56nZYm6/eklipz-pfp.png", alt: "Eklipz PFP" },
+        { src: "https://i.ibb.co/WvWyRNQP/aurex-sign-example.png", alt: "Aurex Sign Example" }
+    ];
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        document.getElementById("lightbox").style.display = "block";
+        document.getElementById("lightbox-img").src = images[currentIndex].src;
+        document.getElementById("lightbox-caption").textContent = images[currentIndex].alt;
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    function changeSlide(direction) {
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        if (currentIndex >= images.length) currentIndex = 0;
+
+        document.getElementById("lightbox-img").src = images[currentIndex].src;
+        document.getElementById("lightbox-caption").textContent = images[currentIndex].alt;
+    }
+</script>
 
 </body>
 </html>
