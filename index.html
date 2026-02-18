@@ -1,161 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Design by Eklipz</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Design by Eklipz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://db.onlinewebfonts.com/c/e37c5bb24acd803973c692c8c59a6230?family=Benzin-Bold" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0f0f0f;
-            color: white;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .hero { padding: 120px 10% 60px 10%; text-align: center; }
-        .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 20px; }
-        .hero p { max-width: 700px; margin: 0 auto; font-size: 18px; opacity: 0.7; line-height: 1.6; }
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0c0c0c;
+    color: white;
+    overflow-x: hidden;
+}
 
-        .portfolio { padding: 60px 10% 100px 10%; text-align: center; }
-        .portfolio h2 { margin-bottom: 50px; font-size: 36px; }
+/* HERO */
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.hero {
+    padding: 140px 10% 80px;
+    text-align: center;
+}
 
-        .grid img {
-            width: 100%;
-            border-radius: 14px;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: pointer;
-            object-fit: cover;
-            height: 250px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
+.hero h1 {
+    font-family: 'Benzin-Bold', sans-serif;
+    font-size: 64px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
 
-        .grid img:nth-child(odd) { height: 300px; }
+.hero p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 1.7;
+}
 
-        .grid img:hover {
-            transform: scale(1.08) rotate(-1deg);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.7);
-            z-index: 2;
-        }
+/* PORTFOLIO */
 
-        .contact { padding: 100px 0; text-align: center; }
-        .contact img { width: 100px; transition: 0.3s ease; }
-        .contact img:hover { transform: scale(1.1); }
+.portfolio {
+    padding: 80px 10% 120px;
+    text-align: center;
+}
 
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            padding-top: 60px;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
-            text-align: center;
-        }
+.portfolio h2 {
+    font-family: 'Benzin-Bold', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
 
-        .lightbox img {
-            display: block;
-            margin: auto;
-            max-width: 90%;
-            max-height: 70vh;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 35px;
+}
 
-        .caption { color: #ccc; margin-top: 15px; font-size: 18px; }
+.grid img {
+    width: 100%;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
 
-        .close { position: absolute; top: 25px; right: 40px; font-size: 40px; cursor: pointer; }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 50px;
-            padding: 16px;
-            user-select: none;
-        }
-        .prev { left: 30px; }
-        .next { right: 30px; }
-        .prev:hover, .next:hover, .close:hover { opacity: 0.7; }
-    </style>
+.grid img:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Benzin-Bold', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.discord-button {
+    display: inline-block;
+    font-family: 'Benzin-Bold', sans-serif;
+    padding: 18px 40px;
+    border-radius: 50px;
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.discord-button:hover {
+    background: #4752c4;
+    transform: translateY(-4px);
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 14px;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 55px;
+    font-family: 'Benzin-Bold', sans-serif;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+}
+
+.prev { left: 40px; }
+.next { right: 40px; }
+
+.close {
+    position: absolute;
+    top: 35px;
+    right: 50px;
+    font-size: 42px;
+    font-family: 'Benzin-Bold', sans-serif;
+    cursor: pointer;
+}
+</style>
 </head>
 <body>
 
 <section class="hero">
     <h1>Design by Eklipz</h1>
     <p>
-        I’m eklipz, a graphic designer creating clean, bold, and modern visuals. 
-        I can create banners, profile graphics, esports graphics, social media content and custom designs that stand out. 
-      Every project is built with attention to detail and a strong visual identity.
+        Bold, modern graphic design for racing leagues and competitive brands.
+        From race results and standings to full visual identities, every design
+        is built to feel premium, powerful, and broadcast-ready.
     </p>
 </section>
 
 <section class="portfolio">
-    <h2>Featured Work</h2>
-
+    <h2>Portfolio</h2>
     <div class="grid">
-        <img src="https://i.ibb.co/HfsJb51h/Race-winner-design.png" alt="Race Winner Design" onclick="openLightbox(0)">
-        <img src="https://i.ibb.co/jPJPyXTG/Racing-League-Banner.png" alt="Racing League Banner" onclick="openLightbox(1)">
-        <img src="https://i.ibb.co/nML8WQB1/Profile-Banner.png" alt="Profile Banner" onclick="openLightbox(2)">
-        <img src="https://i.ibb.co/0VQdph0F/Racing-League-Banner.png" alt="Racing League Banner Alternate" onclick="openLightbox(3)">
-        <img src="https://i.ibb.co/4ZpMJcHz/Profile-pictures.png" alt="Profile Pictures" onclick="openLightbox(4)">
-        <img src="https://i.ibb.co/wXHNDvf/League-standings-graphic.png" alt="League Standings Graphic" onclick="openLightbox(5)">
-        <img src="https://i.ibb.co/5hrDYSXH/Profile-pictures-alternate-style.png" alt="Profile Pictures Alternate Style" onclick="openLightbox(6)">
+        <img src="https://i.ibb.co/HfsJb51h/Race-winner-design.png" alt="Race Winner Design">
+        <img src="https://i.ibb.co/nML8WQB1/Profile-Banner.png" alt="Profile Banner">
+        <img src="https://i.ibb.co/0VQdph0F/Racing-League-Banner.png" alt="League Banner">
+        <img src="https://i.ibb.co/4ZpMJcHz/Profile-pictures.png" alt="Profile Pictures Design">
+        <img src="https://i.ibb.co/wXHNDvf/League-standings-graphic.png" alt="League Standings Graphic">
+        <img src="https://i.ibb.co/tp4NWTMC/Round-Banner-Design.png" alt="Round Banner Design">
+        <img src="https://i.ibb.co/bRCw0sYx/Race-Results-Design.png" alt="Race Results Design">
     </div>
 </section>
 
 <section class="contact">
     <h2>Contact</h2>
-    <a href="https://discord.com/users/1218968797889957941" target="_blank">
-        <img src="https://pngimg.com/d/discord_PNG3.png" alt="Discord">
+    <a href="discord.com/users/1218968797889957941" target="_blank" class="discord-button">
+        DISCORD
     </a>
 </section>
 
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <span class="nav prev" onclick="changeImage(-1)">❮</span>
     <img id="lightbox-img">
-    <div class="caption" id="lightbox-caption"></div>
-    <span class="next" onclick="changeSlide(1)">&#10095;</span>
+    <span class="nav next" onclick="changeImage(1)">❯</span>
 </div>
 
 <script>
-    const images = [
-        { src: "https://i.ibb.co/HfsJb51h/Race-winner-design.png", alt: "Race Winner Design" },
-        { src: "https://i.ibb.co/jPJPyXTG/Racing-League-Banner.png", alt: "Racing League Banner" },
-        { src: "https://i.ibb.co/nML8WQB1/Profile-Banner.png", alt: "Profile Banner" },
-        { src: "https://i.ibb.co/0VQdph0F/Racing-League-Banner.png", alt: "Racing League Banner Alternate" },
-        { src: "https://i.ibb.co/4ZpMJcHz/Profile-pictures.png", alt: "Profile Pictures" },
-        { src: "https://i.ibb.co/wXHNDvf/League-standings-graphic.png", alt: "League Standings Graphic" },
-        { src: "https://i.ibb.co/5hrDYSXH/Profile-pictures-alternate-style.png", alt: "Profile Pictures Alternate Style" }
-    ];
+const images = document.querySelectorAll('.grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
 
-    let currentIndex = 0;
+let currentIndex = 0;
 
-    function openLightbox(index) {
+images.forEach((img, index) => {
+    img.addEventListener('click', () => {
         currentIndex = index;
-        document.getElementById("lightbox").style.display = "block";
-        document.getElementById("lightbox-img").src = images[currentIndex].src;
-        document.getElementById("lightbox-caption").textContent = images[currentIndex].alt;
-    }
+        showImage();
+        lightbox.classList.add('active');
+    });
+});
 
-    function closeLightbox() { document.getElementById("lightbox").style.display = "none"; }
+function showImage() {
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+}
 
-    function changeSlide(direction) {
-        currentIndex += direction;
-        if (currentIndex < 0) currentIndex = images.length - 1;
-        if (currentIndex >= images.length) currentIndex = 0;
-        document.getElementById("lightbox-img").src = images[currentIndex].src;
-        document.getElementById("lightbox-caption").textContent = images[currentIndex].alt;
-    }
+function changeImage(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    if (currentIndex >= images.length) currentIndex = 0;
+    showImage();
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') changeImage(1);
+    if (e.key === 'ArrowLeft') changeImage(-1);
+    if (e.key === 'Escape') closeLightbox();
+});
 </script>
 
 </body>
